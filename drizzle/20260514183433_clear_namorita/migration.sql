@@ -1,0 +1,1 @@
+ALTER TABLE "ppdle-moves" ALTER COLUMN "generation" SET DATA TYPE varchar(255) USING "generation"::varchar(255);
