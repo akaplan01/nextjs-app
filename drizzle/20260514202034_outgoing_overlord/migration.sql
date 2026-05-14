@@ -1,0 +1,1 @@
+ALTER TABLE "ppdle-daily" ADD COLUMN "day" serial;

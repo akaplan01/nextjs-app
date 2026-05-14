@@ -1,0 +1,1 @@
+ALTER TABLE "ppdle-moves" ADD PRIMARY KEY ("id");
