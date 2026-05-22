@@ -1,4 +1,4 @@
-import {integer, pgTable, varchar, serial} from "drizzle-orm/pg-core";
+import {integer, pgTable, varchar, serial, date, uniqueIndex} from "drizzle-orm/pg-core";
 
 export const movesTable = pgTable("ppdle-moves",{
     id: integer().notNull().primaryKey(),
@@ -12,6 +12,12 @@ export const movesTable = pgTable("ppdle-moves",{
 });
 
 export const dailyRandom = pgTable("ppdle-daily",{
-    day: serial(),
-    id: integer().references(() => movesTable.id, {onDelete: "cascade", onUpdate: "cascade"}),
+    id: serial('id').primaryKey().notNull(),
+    answerid: integer('answer_id').notNull().references(() => movesTable.id, {onDelete: "cascade", onUpdate: "cascade"}),
+    gameDate: date('game_date').notNull()
+    
+}, (table) => {
+    return {
+        dateIdx: uniqueIndex().on(table.gameDate)
+    };
 });

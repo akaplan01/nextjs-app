@@ -1,0 +1,39 @@
+@import 'tailwindcss';
+
+.search-dropdown{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 100;
+    border: 1px outset grey;
+    max-height:350px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.search-dropdown:empty{
+    border: 0;
+}
+
+.search-dropdown li:not(:last-child){
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-bottom: 1px dashed grey;
+}
+
+.input-bar-container{
+    position: relative;
+    width: 50%;
+}
+
+.input-bar{
+    width: 100%;
+    border: 1px outset grey;
+    border-radius: 2px;
+}

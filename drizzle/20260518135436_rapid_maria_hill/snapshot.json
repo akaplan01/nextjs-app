@@ -1,0 +1,224 @@
+{
+  "version": "8",
+  "dialect": "postgres",
+  "id": "7ffc1350-4d7e-4976-9be5-3f273e194011",
+  "prevIds": [
+    "413381d5-6eb0-43f7-a249-1cc2c9ddce9f"
+  ],
+  "ddl": [
+    {
+      "isRlsEnabled": false,
+      "name": "ppdle-daily",
+      "entityType": "tables",
+      "schema": "public"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "ppdle-moves",
+      "entityType": "tables",
+      "schema": "public"
+    },
+    {
+      "type": "serial",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "ppdle-daily"
+    },
+    {
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "answer_id",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "ppdle-daily"
+    },
+    {
+      "type": "date",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "game_date",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "ppdle-daily"
+    },
+    {
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "ppdle-moves"
+    },
+    {
+      "type": "varchar(255)",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "name",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "ppdle-moves"
+    },
+    {
+      "type": "varchar(255)",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "type",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "ppdle-moves"
+    },
+    {
+      "type": "varchar(255)",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "damage_type",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "ppdle-moves"
+    },
+    {
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "pp",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "ppdle-moves"
+    },
+    {
+      "type": "varchar(255)",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "power",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "ppdle-moves"
+    },
+    {
+      "type": "varchar(255)",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "accuracy",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "ppdle-moves"
+    },
+    {
+      "type": "varchar(255)",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "generation",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "ppdle-moves"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        {
+          "value": "game_date",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "ppdle-daily_game_date_index",
+      "entityType": "indexes",
+      "schema": "public",
+      "table": "ppdle-daily"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "answer_id"
+      ],
+      "schemaTo": "public",
+      "tableTo": "ppdle-moves",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "CASCADE",
+      "onDelete": "CASCADE",
+      "name": "ppdle-daily_answer_id_ppdle-moves_id_fkey",
+      "entityType": "fks",
+      "schema": "public",
+      "table": "ppdle-daily"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "ppdle-daily_pkey",
+      "schema": "public",
+      "table": "ppdle-daily",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "ppdle-moves_pkey",
+      "schema": "public",
+      "table": "ppdle-moves",
+      "entityType": "pks"
+    }
+  ],
+  "renames": []
+}

@@ -1,6 +1,6 @@
 import LikeButton from './likebutton';
 import InputBar from './inputbar';
-import PPdleRequestHandler from './ppdle/ppdle-request-handler';
+import PPdleRequestHandler from './ppdle/frontend/ppdle-request-handler';
 
 function Header({title}) {
     return (<h1>{title ? title : 'No title specified!'}</h1>);

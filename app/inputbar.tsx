@@ -1,5 +1,6 @@
 'use client';
 
+import "./styles/inputbarstyle.css";
 import {useState} from 'react';
 
 export default function InputBar({wordList}) {
@@ -34,12 +35,12 @@ export default function InputBar({wordList}) {
     //Handles an option in the autocomplete list being clicked. Should be passed the value of the clicked item.
 
     return (
-        <div>
-            <input type="search" id="input-bar" name ="input-bar" value={inputString} placeholder="Type the name of a move!" 
+        <div className="input-bar-container">
+            <input type="search" className="input-bar" name ="input-bar" autoComplete="off" value={inputString} placeholder="Type the name of a move!" 
             onFocus={() => setVisible(true)} 
             onBlur={() => setVisible(false)} 
             onChange = {handleInput}/>
-            {visible && <ul>
+            {visible && <ul className = "search-dropdown">
                 {autocompleted.map(
                     (result, index) => (
                         <li key={index} 
