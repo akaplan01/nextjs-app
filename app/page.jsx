@@ -1,5 +1,5 @@
 import LikeButton from './likebutton';
-import InputBar from './inputbar';
+import InputBar from './ppdle/frontend/inputbar';
 import PPdleRequestHandler from './ppdle/frontend/ppdle-request-handler';
 
 function Header({title}) {

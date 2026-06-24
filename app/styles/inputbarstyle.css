@@ -29,11 +29,17 @@
 
 .input-bar-container{
     position: relative;
-    width: 50%;
+    width:100%;
 }
 
 .input-bar{
     width: 100%;
     border: 1px outset grey;
     border-radius: 2px;
+}
+
+#input-bar-form{
+    width: 100%;
+    display:inline-flex;
+    gap: 8px;
 }

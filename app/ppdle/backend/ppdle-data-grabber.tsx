@@ -26,7 +26,7 @@ export async function pullRandomMove(){
 
 //dayNumber is the current day, 0-indexed.
 
-export async function pullMoveByID({id}){
+export async function pullMoveByID(id){
     try{
         const selected = await db.select().from(movesTable).where(eq(movesTable.id, id));
 
@@ -89,11 +89,18 @@ export async function getMoveNameList(){
 
 export async function pullDailyMove(){
     const idPull = await pullDailyID();
+    console.log(idPull);
     const moveData = await pullMoveByID(idPull.data);
+    console.log(moveData);
     return moveData.data;
 }
 
-//pullDailyID({dayNumber: 25}).then((data) => getDailyByID({dailyID: data[0].id as number})).then((data) => console.log(data[0]));
-pullRandomMove().then(({success, data}) => console.log(data[0]));
+export async function getMoveData(){
+    const moveData = await db.select().from(movesTable);
+    return moveData;
+}
 
-getMoveNameList().then(data => console.log(data));
+//pullDailyID({dayNumber: 25}).then((data) => getDailyByID({dailyID: data[0].id as number})).then((data) => console.log(data[0]));
+//pullRandomMove().then(({success, data}) => console.log(data[0]));
+
+//getMoveNameList().then(data => console.log(data));

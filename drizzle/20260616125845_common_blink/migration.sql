@@ -1,0 +1,1 @@
+ALTER TABLE "ppdle-moves" RENAME COLUMN "damage_type" TO "damageType";

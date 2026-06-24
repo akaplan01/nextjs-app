@@ -1,0 +1,1 @@
+ALTER TABLE "ppdle-daily" ALTER COLUMN "game_date" DROP NOT NULL;
