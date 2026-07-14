@@ -1,6 +1,8 @@
 import {typeChart} from '../frontend/typechart';
 
 function checkTypeEffectiveness(selectedType, targetType){
+    const truncated = typeChart[selectedType];
+    console.log(truncated);
     if (!Object.hasOwn(typeChart[selectedType], targetType)){
         return 1;
     }
@@ -22,7 +24,6 @@ function checkDamageType(selectedDT, targetDT){
 }
 
 function checkPower(selectedPower, targetPower){
-    console.log(targetPower);
     const selectedAsNumber = parseInt(selectedPower);
     const targetAsNumber = parseInt(targetPower);
     if(targetPower == selectedPower){
@@ -68,8 +69,10 @@ function checkGeneration(selectedGeneration, targetGeneration){
 
 
 export async function getMoveResults(selectedMove, targetMove){
-    console.log(targetMove);
+
     console.log(selectedMove);
+    console.log(targetMove);
+
     var success : boolean = false;
     if (selectedMove.id == targetMove.id){
         const success = true;

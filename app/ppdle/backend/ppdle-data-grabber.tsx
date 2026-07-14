@@ -89,7 +89,6 @@ export async function getMoveNameList(){
 
 export async function pullDailyMove(){
     const idPull = await pullDailyID();
-    console.log(idPull);
     const moveData = await pullMoveByID(idPull.data);
     console.log(moveData);
     return moveData.data;

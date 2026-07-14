@@ -1,5 +1,12 @@
 @import 'tailwindcss';
 
+
+body {
+  padding: 20px 20px 60px;
+  max-width: 60%;
+  margin: 0 auto;
+}
+
 .search-dropdown{
     position: absolute;
     top: 100%;
@@ -8,6 +15,7 @@
     border: 1px outset grey;
     max-height:350px;
     overflow-y: auto;
+    background-color: white;
 
     &::-webkit-scrollbar{
         display: none;
@@ -19,12 +27,14 @@
 
 .search-dropdown:empty{
     border: 0;
+    background-color: white;
 }
 
 .search-dropdown li:not(:last-child){
     padding-top: 4px;
     padding-bottom: 4px;
     border-bottom: 1px dashed grey;
+    background-color: white;
 }
 
 .input-bar-container{
@@ -42,4 +52,34 @@
     width: 100%;
     display:inline-flex;
     gap: 8px;
+}
+
+.results-container{
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.table-row{
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.table-cell {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 2px;
+    align-content: center;
+    justify-content: center;
+}
+.move-title-cell{
+    background-color: lightgray;
+    margin-left: 0;
+}
+
+.final-cell{
+    margin-right: 0;
 }
