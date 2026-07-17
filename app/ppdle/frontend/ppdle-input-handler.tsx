@@ -11,25 +11,9 @@ export default function PPdleInputHandler({wordList, submitFunction, serverDateS
     const [autocompleted, setAutocompleted] = useState<string[]>([]);
     const [visible, setVisible] = useState<boolean>(false);
     const dateString = new Date().toISOString().slice(0,10);
-    const [lastDate, setLastDate] = useState();
     const [results, setResults] = useState();
 
-
-    useEffect(() =>{
-        if (lastDate == dateString){
-            const previous = localStorage.getItem("guess-results");
-            (previous && previous !== "undefined") ? setResults(JSON.parse(previous)) : null;
-        }
-    })
-
-
-    useEffect(() => {
-        localStorage.setItem("guess-results", JSON.stringify(results));
-    }, [results]);
-
-    useEffect(() => {
-        localStorage.setItem("last-date", dateString);
-    }, []);
+    const [todayComplete, setTodayComplete] = useState();
 
     async function formAction(formData: FormData){
         const request = await submitFunction(formData);
